@@ -4,6 +4,7 @@ package acme.entities.peep;
 import java.util.Date;
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -48,6 +49,7 @@ public class Peep extends AbstractEntity {
 	protected String			email;
 
 	@URL
+	@Column(nullable = true)
 	protected String			link;
 
 
