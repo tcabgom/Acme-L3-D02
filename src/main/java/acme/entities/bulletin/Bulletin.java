@@ -33,8 +33,7 @@ public class Bulletin extends AbstractEntity {
     @Length(max = 75)
     protected String title;
 
-    @NotNull
-    protected Boolean critical;
+    protected boolean critical;
 
     @NotBlank
     @Length(max = 100)
