@@ -3,12 +3,17 @@ package acme.entities.tutorial;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
 import acme.framework.data.AbstractEntity;
+import acme.roles.Assistant;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,7 +28,7 @@ public class Tutorial extends AbstractEntity {
 
 	// Attributes --------------------------------------------------------------------
 
-	@Pattern(regexp = "[A-Z]{1,3}[0-9][0-9]{3}")
+	@Pattern(regexp = "^[A-Z]{1,3}[0-9][0-9]{3}$")
 	@NotBlank
 	@Column(unique = true)
 	protected String			code;
@@ -40,10 +45,26 @@ public class Tutorial extends AbstractEntity {
 	@Length(max = 100)
 	protected String			goals;
 
-	protected double			estimatedTimeMilliseconds;
-
 	// Derived attributes ------------------------------------------------------------
 
+
+	// TODO: The sum of the durations of its associated sessions
+	@Transient
+	protected Integer estimatedMinutes() {
+		return null;
+	}
+
 	// Relationships -----------------------------------------------------------------
+
+	//@ManyToOne(optional = false)
+	//@NotNull
+	//@Valid
+	//protected Course	course;
+
+
+	@ManyToOne(optional = false)
+	@NotNull
+	@Valid
+	protected Assistant assistant;
 
 }
