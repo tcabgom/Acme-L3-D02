@@ -34,7 +34,11 @@ public class Audit extends AbstractEntity {
 
 	@Length(max = 100)
 	@NotBlank
-	protected String			points;
+	protected String			strongPoints;
+
+	@Length(max = 100)
+	@NotBlank
+	protected String			weakPoints;
 
 	@NotNull
 	protected Mark				mark;
