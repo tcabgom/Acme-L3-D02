@@ -70,7 +70,7 @@ public class Offer extends AbstractEntity {
 
 	@NotNull
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	protected Administrator		administrator;
 
 }
