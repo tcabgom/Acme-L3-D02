@@ -1,6 +1,7 @@
 package acme.entities.activity;
 
 import acme.entities.enrolment.Enrolment;
+import acme.entities.enumerates.ActivityType;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
