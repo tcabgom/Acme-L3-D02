@@ -2,6 +2,7 @@
 package acme.entities.lecture;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
@@ -14,7 +15,12 @@ import org.hibernate.validator.constraints.URL;
 import acme.framework.components.datatypes.Money;
 import acme.framework.data.AbstractEntity;
 import acme.roles.Lecturer;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
+@Entity
 public class Course extends AbstractEntity {
 	// Serialisation identifier -----------------------------------------------
 
