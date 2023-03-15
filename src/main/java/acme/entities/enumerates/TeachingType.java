@@ -1,6 +1,6 @@
 
 package acme.entities.enumerates;
 
-public enum TutorialSessionType {
+public enum TeachingType {
 	THEORY, HANDS_ON, BALANCED
 }

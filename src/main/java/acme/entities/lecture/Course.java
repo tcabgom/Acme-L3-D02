@@ -44,7 +44,7 @@ public class Course extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-	// protected ActivityType		knowledge;
+	// protected TeachingType		knowledge;
 
 	// Relationships ----------------------------------------------------------
 

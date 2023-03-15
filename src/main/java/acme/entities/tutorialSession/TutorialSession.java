@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.enumerates.TutorialSessionType;
+import acme.entities.enumerates.TeachingType;
 import acme.entities.tutorial.Tutorial;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
@@ -40,7 +40,7 @@ public class TutorialSession extends AbstractEntity {
 	protected String				sessionAbstract;
 
 	@NotNull
-	protected TutorialSessionType	sessionType;
+	protected TeachingType	sessionType;
 
 	// TODO: Restriction: At least one day after the instantiation date
 	@NotNull
