@@ -5,12 +5,8 @@ import java.util.Map;
 
 import acme.entities.enumerates.TeachingType;
 import acme.framework.data.AbstractForm;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
-public class AssistantDashboard extends AbstractForm {
+public class LecturerDashboarb extends AbstractForm {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -20,12 +16,11 @@ public class AssistantDashboard extends AbstractForm {
 
 	protected Map<TeachingType, Integer>	totalNumberOfSessionsPerType;
 
-	protected Statistics					assistantSession;
+	protected Statistics					lecturerLectures;
 
-	protected Statistics					assistantTutorials;
+	protected Statistics					lecturerCourses;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-
 }
