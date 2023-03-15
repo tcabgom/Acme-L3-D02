@@ -3,8 +3,10 @@ package acme.entities.practicum_session;
 
 import java.time.LocalDate;
 
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
@@ -41,4 +43,7 @@ public class Practicum_session extends AbstractEntity {
 
 	// Relationships ----------------------------------------------------------
 
+	@ManyToOne(optional = true)
+	@Valid
+	protected Practicum			practicum;
 }
