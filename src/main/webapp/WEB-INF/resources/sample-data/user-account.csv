@@ -5,3 +5,5 @@ user-account-assistant-01,true,"UserIdentity{name: 'Tadeo', surname: 'Cabrera', 
 user-account-assistant-02,true,"UserIdentity{name: 'Francisco Javier', surname: 'Larrondobuno', email: 'javilarrondo@acme.com'}",assistant2,assistant2
 user-account-auditor-01,true,"UserIdentity{name: 'Ignacio', surname: 'Arroyo Mantero', email: 'auditor1@acme.com'}",auditor1,auditor1
 user-account-auditor-02,true,"UserIdentity{name: 'Paquito', surname: 'El Chocolatero', email: 'auditor2@acme.com'}",auditor2,auditor2
+user-account-student-01,true,"UserIdentity{name: 'Fulanito', surname: 'De Tal', email: 'student1@acme.com'}",student1,student1
+user-account-student-02,true,"UserIdentity{name: 'Menganito', surname: 'De las Nieves', email: 'student2@acme.com'}",student2,student2
