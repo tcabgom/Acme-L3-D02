@@ -2,12 +2,19 @@
 package acme.roles;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
 
 import acme.framework.data.AbstractRole;
+import lombok.Getter;
+import lombok.Setter;
 
+@Entity
+@Getter
+@Setter
 public class Auditor extends AbstractRole {
 
 	/**
@@ -21,18 +28,14 @@ public class Auditor extends AbstractRole {
 
 	@Length(max = 25)
 	@NotBlank
-	protected String			identification;
+	protected String			proffesionalID;
 
 	@Length(max = 100)
 	@NotBlank
 	protected String			certifications;
 
+	@URL
 	@Column(nullable = true)
 	protected String			link;
 
 }
-//Class auditor:
-//- firm (not blank, <=75)
-//- ID (not blank, <=25)
-//- Certifications (list, not blank, <=100)
-//- link (optional)
