@@ -1,5 +1,5 @@
 
-package acme.entities.dashboard;
+package acme.forms;
 
 import acme.framework.data.AbstractForm;
 import lombok.Getter;
@@ -15,18 +15,11 @@ public class AssistantDashboard extends AbstractForm {
 
 	// Attributes -------------------------------------------------------------
 
-	Integer						totalNumberOfTheorySessions;
-	Integer						totalNumberOfNonTheorySessions;
+	//protected Map<TutorialSessionType, Integer>	totalNumberOfSessionsPerType;
 
-	Double						minimumDurationOfAssistantSessions;
-	Double						maximunDurationOfAssistantSessions;
-	Double						averageDurationOfAssistantSessions;
-	Double						deviationDurationOfAssistantSessions;
+	protected Statistics		assistantSession;
 
-	Double						minimumDurationOfAssistantTutorials;
-	Double						maximunDurationOfAssistantTutorials;
-	Double						averageDurationOfAssistantTutorials;
-	Double						deviationDurationOfAssistantTutorials;
+	protected Statistics		assistantTutorials;
 
 	// Derived attributes -----------------------------------------------------
 
