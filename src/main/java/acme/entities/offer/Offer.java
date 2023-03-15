@@ -57,6 +57,7 @@ public class Offer extends AbstractEntity {
 	protected Date				availabilityPeriodEnd;
 
 	@NotNull
+	@Valid
 	protected Money				price;
 
 	@URL
