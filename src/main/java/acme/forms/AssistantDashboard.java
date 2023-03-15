@@ -1,6 +1,9 @@
 
 package acme.forms;
 
+import java.util.Map;
+
+import acme.entities.enumerates.TutorialSessionType;
 import acme.framework.data.AbstractForm;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,15 +14,15 @@ public class AssistantDashboard extends AbstractForm {
 
 	// Serialisation identifier -----------------------------------------------
 
-	private static final long	serialVersionUID	= 1L;
+	private static final long					serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
-	//protected Map<TutorialSessionType, Integer>	totalNumberOfSessionsPerType;
+	protected Map<TutorialSessionType, Integer>	totalNumberOfSessionsPerType;
 
-	protected Statistics		assistantSession;
+	protected Statistics						assistantSession;
 
-	protected Statistics		assistantTutorials;
+	protected Statistics						assistantTutorials;
 
 	// Derived attributes -----------------------------------------------------
 
