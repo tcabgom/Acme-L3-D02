@@ -48,13 +48,11 @@ public class Offer extends AbstractEntity {
 
 	// TODO: Restriction: Must be at least 1 day after instantiation
 	@NotNull
-	@Future
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				availabilityPeriodStart;
 
 	// TODO: Restriction: Must be at least 7 days after starting availability period
 	@NotNull
-	@Future
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				availabilityPeriodEnd;
 
