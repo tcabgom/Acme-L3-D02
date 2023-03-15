@@ -3,11 +3,15 @@ package acme.entities.tutorial;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
+import acme.entities.tutorialSession.TutorialSession;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -45,5 +49,10 @@ public class Tutorial extends AbstractEntity {
 	// Derived attributes ------------------------------------------------------------
 
 	// Relationships -----------------------------------------------------------------
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected TutorialSession	sessions;
 
 }
