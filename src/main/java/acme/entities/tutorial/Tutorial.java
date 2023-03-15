@@ -12,6 +12,7 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
+import acme.entities.tutorialSession.TutorialSession;
 import acme.framework.data.AbstractEntity;
 import acme.roles.Assistant;
 import lombok.Getter;
@@ -60,7 +61,6 @@ public class Tutorial extends AbstractEntity {
 	//@NotNull
 	//@Valid
 	//protected Course	course;
-
 
 	@ManyToOne(optional = false)
 	@NotNull

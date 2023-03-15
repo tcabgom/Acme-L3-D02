@@ -1,0 +1,6 @@
+key,enabled,identity,password,username
+lecturer1,true,"UserIdentity{name: 'Profe', surname: 'Sor', email: 'profe.sor@acme.com'}",lecturer1, lecturer1
+lecturer2,true,"UserIdentity{name: 'Prof', surname: 'Esora', email: 'prof.esora@acme.com'}", lecturer2, lecturer2
+user-account-assistant-01,true,"UserIdentity{name: 'Tadeo', surname: 'Cabrera', email: 'tcabgom222@acme.com'}",assistant1,assistant1
+user-account-assistant-02,true,"UserIdentity{name: 'Francisco Javier', surname: 'Larrondobuno', email: 'javilarrondo@acme.com'}",assistant2,assistant2
+
