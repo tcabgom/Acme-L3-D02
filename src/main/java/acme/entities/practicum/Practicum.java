@@ -2,7 +2,9 @@
 package acme.entities.practicum;
 
 import javax.persistence.Column;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
@@ -18,7 +20,7 @@ public class Practicum extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Pattern(regexp = "[A-Z]{1,3}[0-9][0-9]{3}")
+	@Pattern(regexp = "^[A-Z]{1,3}[0-9][0-9]{3}$")
 	@Column(unique = true)
 	protected String			code;
 
@@ -39,4 +41,9 @@ public class Practicum extends AbstractEntity {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
+
+	@ManyToOne(optional = false)
+	@NotNull
+	protected Company			company;
+
 }
