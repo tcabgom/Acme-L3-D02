@@ -1,0 +1,3 @@
+key,enabled,identity,password,username
+lecturer1,true,"UserIdentity{name: 'Profe', surname: 'Sor', email: 'profe.sor@acme.com'}",lecturer1, lecturer1
+lecturer2,true,"UserIdentity{name: 'Prof', surname: 'Esora', email: 'prof.esora@acme.com'}", lecturer2, lecturer2

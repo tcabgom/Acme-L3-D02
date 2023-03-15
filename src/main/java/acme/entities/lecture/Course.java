@@ -2,22 +2,27 @@
 package acme.entities.lecture;
 
 import javax.persistence.Column;
+import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-public class Course {
+import acme.framework.components.datatypes.Money;
+import acme.framework.data.AbstractEntity;
+import acme.roles.Lecturer;
+
+public class Course extends AbstractEntity {
 	// Serialisation identifier -----------------------------------------------
 
 	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
-	@Pattern(regexp = "[A-Z]{1,3}[0-9]{3}")
+	@Pattern(regexp = "^[A-Z]{1,3}[0-9]{3}$")
 	@NotBlank
 	@Column(unique = true)
 	protected String			code;
@@ -31,15 +36,22 @@ public class Course {
 	protected String			courseAsbtract;
 
 	@NotNull
-	@Positive
-	protected Double			retailPrice;
+	@Valid
+	protected Money				retailPrice;
 
 	@URL
 	protected String			furtherInformation;
 
 	// Derived attributes -----------------------------------------------------
-	@NotNull
-	protected KnowledgeType		knowledge;
+
+	//@NotNull
+	//protected KnowledgeType		knowledge;
 
 	// Relationships ----------------------------------------------------------
+
+	@ManyToOne(optional = false)
+	@NotNull
+	@Valid
+	protected Lecturer			lecturer;
+
 }

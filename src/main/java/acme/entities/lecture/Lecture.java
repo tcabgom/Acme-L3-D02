@@ -2,7 +2,6 @@
 package acme.entities.lecture;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
@@ -50,8 +49,5 @@ public class Lecture extends AbstractEntity {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-
-	@ManyToOne
-	protected Course			course;
 
 }
