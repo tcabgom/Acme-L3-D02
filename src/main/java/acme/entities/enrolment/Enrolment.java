@@ -2,15 +2,20 @@ package acme.entities.enrolment;
 
 
 import acme.entities.activity.Activity;
+import acme.entities.lecture.Course;
 import acme.framework.data.AbstractEntity;
+import acme.roles.Student;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 @Entity
@@ -42,4 +47,14 @@ public class Enrolment extends AbstractEntity {
     protected double workTime;
 
     // Relationships ----------------------------------------------------------
+
+    @ManyToOne
+    @Valid
+    @NotNull
+    protected Student student;
+
+    @ManyToOne
+    @Valid
+    @NotNull
+    protected Course course;
 }
