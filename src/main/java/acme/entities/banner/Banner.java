@@ -32,11 +32,13 @@ public class Banner extends AbstractEntity {
 	@NotNull
 	protected Date				instantiation;
 
+	// TODO: Restriction: Must be after the instantiation
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
 	@NotNull
 	protected Date				displayPeriodInitial;
 
+	// TODO: Restriction: Must last at least 1 week 
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
 	@NotNull

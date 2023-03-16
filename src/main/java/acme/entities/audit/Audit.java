@@ -10,7 +10,6 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
-import acme.entities.enumerates.Mark;
 import acme.entities.lecture.Course;
 import acme.framework.data.AbstractEntity;
 import acme.roles.Auditor;
@@ -44,8 +43,9 @@ public class Audit extends AbstractEntity {
 	@NotBlank
 	protected String			weakPoints;
 
-	@NotNull
-	protected Mark				mark;
+	//	TODO: Derived atribute, after discussion with client must be a string with a list of marks of the records
+	//	@NotNull
+	//	protected Mark				mark;
 
 	@ManyToOne
 	@NotNull
