@@ -4,3 +4,4 @@ audit-02,auditor-01,curso-01,KKD420,bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 audit-03,auditor-01,curso-01,KKC420,c,c,c
 audit-04,auditor-01,curso-01,KKL420,Si,Si,Si
 audit-05,auditor-01,curso-01,KKP420,conclusionTest,strongPointsTest,weakPointsTest
+audit-06,auditor-01,curso-01,KKT420,"<script>alert("hi")</script>","<script>alert("hi")</script>","<script>alert("hi")</script>"
