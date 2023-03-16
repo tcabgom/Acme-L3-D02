@@ -1,6 +1,9 @@
 
 package acme.forms;
 
+import java.util.Map;
+
+import acme.entities.enumerates.ActivityType;
 import acme.framework.data.AbstractForm;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,12 +15,11 @@ public class AuditDashboard extends AbstractForm {
 	/**
 	 * 
 	 */
-	private static final long	serialVersionUID	= 1L;
+	private static final long				serialVersionUID	= 1L;
 
-	protected Integer			totalnumberofAuditsofTheoryCourses;
-	protected Integer			totalnumberofAuditsofHandOnCourses;
+	protected Map<ActivityType, Integer>	totalNumberOfAuditsByCourseType;
 
-	protected Statistics		auditingRecordsStatistics;
-	protected Statistics		periodLengthStatistics;
+	protected Statistics					auditingRecordsStatistics;
+	protected Statistics					periodLengthStatistics;
 
 }
