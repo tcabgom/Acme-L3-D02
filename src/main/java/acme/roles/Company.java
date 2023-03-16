@@ -32,7 +32,7 @@ public class Company extends AbstractRole {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			sumary;
+	protected String			summary;
 
 	@URL
 	protected String			link;

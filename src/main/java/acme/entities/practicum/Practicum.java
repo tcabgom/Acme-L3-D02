@@ -10,6 +10,7 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
+import acme.entities.lecture.Course;
 import acme.framework.data.AbstractEntity;
 import acme.roles.Company;
 
@@ -48,5 +49,10 @@ public class Practicum extends AbstractEntity {
 	@NotNull
 	@Valid
 	protected Company			company;
+
+	@ManyToOne(optional = false)
+	@NotNull
+	@Valid
+	protected Course			course;
 
 }
