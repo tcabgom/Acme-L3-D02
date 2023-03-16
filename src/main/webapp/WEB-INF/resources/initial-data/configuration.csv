@@ -1,2 +1,2 @@
-key,currency
-configuration-01,EUR
+key,currency,aceptedCurrencies
+configuration-01,EUR,"EUR,USD,GBP"

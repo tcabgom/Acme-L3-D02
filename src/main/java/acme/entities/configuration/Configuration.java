@@ -21,19 +21,13 @@ public class Configuration extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Pattern(regexp = "^(EUR|USD|GBP)$")
+	@Pattern(regexp = "^[A-Z]{3}$")
 	protected String			currency;
 
+	@NotBlank
+	protected String			aceptedCurrencies;
+
 	// Derived attributes -----------------------------------------------------
-
-
-	public boolean isAcceptedCurrency(final String currency) {
-		boolean result = false;
-		final String currencyUpperCase = currency.toUpperCase();
-		if (currencyUpperCase.equals("EUR") || currencyUpperCase.equals("USD") || currencyUpperCase.equals("GBP"))
-			result = true;
-		return result;
-	}
 
 	// Relationships ----------------------------------------------------------
 
