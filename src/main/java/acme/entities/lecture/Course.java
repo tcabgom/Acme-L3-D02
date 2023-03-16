@@ -42,7 +42,6 @@ public class Course extends AbstractEntity {
 	protected String			courseAsbtract;
 
 	@NotNull
-	@Valid
 	protected Money				retailPrice;
 
 	@URL
@@ -50,7 +49,7 @@ public class Course extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-	// protected TeachingType		knowledge;
+	// TODO: Atributo derivado tipo de actividad
 
 	// Relationships ----------------------------------------------------------
 
