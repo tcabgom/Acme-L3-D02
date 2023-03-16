@@ -14,21 +14,10 @@ public class AuditDashboard extends AbstractForm {
 	 */
 	private static final long	serialVersionUID	= 1L;
 
-	Integer						totalnumberofAuditsofTheoryCourses;
-	Integer						totalnumberofAuditsofHandOnCourses;
+	protected Integer			totalnumberofAuditsofTheoryCourses;
+	protected Integer			totalnumberofAuditsofHandOnCourses;
 
-	Double						averageAuditingRecordsInAudit;
-	Double						deviationAuditingRecordsInAudit;
-	Double						maximumAuditingRecordsInAudit;
-	Double						minimumAuditingRecordsInAudit;
-
-	Double						averagePeriodLength;
-	Double						deviationPeriodLength;
-	Double						maximumPeriodLength;
-	Double						minimumPeriodLength;
+	protected Statistics		auditingRecordsStatistics;
+	protected Statistics		periodLengthStatistics;
 
 }
-//Dashboard:
-//- Total audits 
-//- Average, Deviation, Minimum, maximum-> audinting records in audits
-//- Average, Deviation, Minimum, maximum-> period length
