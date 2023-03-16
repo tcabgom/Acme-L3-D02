@@ -25,10 +25,12 @@ public class Activity extends AbstractEntity {
 
     // Attributes -------------------------------------------------------------
 
+    @NotNull
     @NotBlank
     @Length(max = 75)
     protected String title;
 
+    @NotNull
     @NotBlank
     @Length(max = 100)
     protected String enrolmentAbstract;

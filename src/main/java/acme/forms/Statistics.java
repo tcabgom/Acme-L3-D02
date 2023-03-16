@@ -8,9 +8,9 @@ import lombok.Setter;
 public class Statistics {
 
     protected int count;
-    protected double average;
-    protected double minimum;
-    protected double maximum;
-    protected double stdDeviation;
+    protected Double average;
+    protected Double minimum;
+    protected Double maximum;
+    protected Double stdDeviation;
 
 }
