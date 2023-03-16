@@ -42,7 +42,6 @@ public class Enrolment extends AbstractEntity {
 
 
     // Derived attributes -----------------------------------------------------
-    protected double workTime;
 
     // Relationships ----------------------------------------------------------
 
