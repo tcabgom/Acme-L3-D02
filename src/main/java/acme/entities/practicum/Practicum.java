@@ -2,6 +2,7 @@
 package acme.entities.practicum;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
@@ -12,7 +13,12 @@ import org.hibernate.validator.constraints.Length;
 
 import acme.framework.data.AbstractEntity;
 import acme.roles.Company;
+import lombok.Getter;
+import lombok.Setter;
 
+@Entity
+@Setter
+@Getter
 public class Practicum extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
@@ -22,7 +28,7 @@ public class Practicum extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Pattern(regexp = "^[A-Z]{1,3}[0-9][0-9]{3}$")
+	@Pattern(regexp = "^[A-Z]{1,3}[0-9]{3}$")
 	@Column(unique = true)
 	protected String			code;
 
