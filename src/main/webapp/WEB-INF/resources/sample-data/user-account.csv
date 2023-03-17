@@ -12,6 +12,7 @@ user-account-auditor-04,true,"UserIdentity{name: 'Test2', surname: 'Apellido2', 
 user-account-auditor-05,true,"UserIdentity{name: 'Test3', surname: 'Apellido3', email: 'auditor5@acme.com'}",auditor5,auditor5
 user-account-auditor-06,true,"UserIdentity{name: 'Test4', surname: 'Apellido4', email: 'auditor6@acme.com'}",auditor6,auditor6
 user-account-auditor-07,true,"UserIdentity{name: 'Test5', surname: 'Apellido5', email: 'auditor7@acme.com'}",auditor7,auditor7
+user-account-auditor-08,true,"UserIdentity{name: 'πατάτα', surname: 'Apellido5', email: 'auditor7@acme.com'}",auditor8,auditor8
 user-account-student-01,true,"UserIdentity{name: 'Fulanito', surname: 'De Tal', email: 'student1@acme.com'}",student1,student1
 user-account-student-02,true,"UserIdentity{name: 'Menganito', surname: 'De las Nieves', email: 'student2@acme.com'}",student2,student2
 user-account-company-01,true,"UserIdentity{name:'Red Bull', surname:'Racing', email:'redbullracing@gmail.com'}",company1,company1
