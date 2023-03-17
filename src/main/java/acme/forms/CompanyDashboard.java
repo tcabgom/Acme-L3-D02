@@ -18,8 +18,7 @@ public class CompanyDashboard extends AbstractForm {
 	// Attributes -------------------------------------------------------------
 
 	protected int					totalPractices;
-	protected Map<String, Integer>	totalHandsOnPracticesPerMonth;
-	protected Map<String, Integer>	totalTheoryPracticesPerMonth;
+	protected Map<String, Integer>	totalPracticesPerMonth;
 	protected Statistics			sessions;
 	protected Statistics			practicalPeriod;
 
