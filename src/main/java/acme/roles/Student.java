@@ -1,23 +1,18 @@
-package acme.entities.bulletin;
+package acme.roles;
 
-import acme.framework.data.AbstractEntity;
+import acme.framework.data.AbstractRole;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import javax.persistence.Entity;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.PastOrPresent;
-import java.util.Date;
 
 @Entity
 @Getter
 @Setter
-public class Bulletin extends AbstractEntity {
+public class Student extends AbstractRole {
 
     // Serialisation identifier -----------------------------------------------
 
@@ -25,20 +20,17 @@ public class Bulletin extends AbstractEntity {
 
     // Attributes -------------------------------------------------------------
 
-    @PastOrPresent
-    @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    protected Date instantiationMoment;
-
     @NotBlank
     @Length(max = 75)
-    protected String title;
-
-    protected boolean critical;
+    protected String statement;
 
     @NotBlank
     @Length(max = 100)
-    protected String message;
+    protected String strongFeatures;
+
+    @NotBlank
+    @Length(max = 100)
+    protected String weakFeatures;
 
     @URL
     protected String furtherInformation;

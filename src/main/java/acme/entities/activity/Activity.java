@@ -1,23 +1,23 @@
-package acme.entities.bulletin;
+package acme.entities.activity;
 
+import acme.entities.enrolment.Enrolment;
+import acme.entities.enumerates.ActivityType;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import javax.persistence.Entity;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.PastOrPresent;
 import java.util.Date;
 
 @Entity
 @Getter
 @Setter
-public class Bulletin extends AbstractEntity {
+public class Activity extends AbstractEntity {
 
     // Serialisation identifier -----------------------------------------------
 
@@ -25,20 +25,26 @@ public class Bulletin extends AbstractEntity {
 
     // Attributes -------------------------------------------------------------
 
-    @PastOrPresent
     @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    protected Date instantiationMoment;
-
     @NotBlank
     @Length(max = 75)
     protected String title;
 
-    protected boolean critical;
-
+    @NotNull
     @NotBlank
     @Length(max = 100)
-    protected String message;
+    protected String enrolmentAbstract;
+
+    @NotNull
+    protected ActivityType type;
+
+    @NotNull
+    @Temporal(TemporalType.TIMESTAMP)
+    protected Date periodStart;
+
+    @NotNull
+    @Temporal(TemporalType.TIMESTAMP)
+    protected Date periodEnd;
 
     @URL
     protected String furtherInformation;
@@ -47,4 +53,8 @@ public class Bulletin extends AbstractEntity {
 
     // Relationships ----------------------------------------------------------
 
+    @NotNull
+    @Valid
+    @ManyToOne(optional = false)
+    protected Enrolment enrolment;
 }

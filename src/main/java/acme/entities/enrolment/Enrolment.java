@@ -1,23 +1,25 @@
-package acme.entities.bulletin;
+package acme.entities.enrolment;
 
+
+import acme.entities.lecture.Course;
 import acme.framework.data.AbstractEntity;
+import acme.roles.Student;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.URL;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.PastOrPresent;
-import java.util.Date;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Getter
 @Setter
-public class Bulletin extends AbstractEntity {
+public class Enrolment extends AbstractEntity {
 
     // Serialisation identifier -----------------------------------------------
 
@@ -25,26 +27,31 @@ public class Bulletin extends AbstractEntity {
 
     // Attributes -------------------------------------------------------------
 
-    @PastOrPresent
-    @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    protected Date instantiationMoment;
+    @Pattern(regexp = "^[A-Z]{1,3}[0-9]{3}$")
+    @NotBlank
+    @Column(unique = true)
+    protected String code;
 
     @NotBlank
     @Length(max = 75)
-    protected String title;
-
-    protected boolean critical;
+    protected String motivation;
 
     @NotBlank
     @Length(max = 100)
-    protected String message;
+    protected String goals;
 
-    @URL
-    protected String furtherInformation;
 
     // Derived attributes -----------------------------------------------------
 
     // Relationships ----------------------------------------------------------
 
+    @ManyToOne(optional = false)
+    @Valid
+    @NotNull
+    protected Student student;
+
+    @ManyToOne(optional = false)
+    @Valid
+    @NotNull
+    protected Course course;
 }
