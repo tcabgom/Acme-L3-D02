@@ -11,6 +11,7 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
+import acme.entities.lecture.Course;
 import acme.framework.data.AbstractEntity;
 import acme.roles.Company;
 import lombok.Getter;
@@ -44,6 +45,7 @@ public class Practicum extends AbstractEntity {
 	@Length(max = 100)
 	protected String			goals;
 
+	@NotNull
 	protected Double			estimatedTime;
 
 	// Derived attributes -----------------------------------------------------
@@ -54,5 +56,10 @@ public class Practicum extends AbstractEntity {
 	@NotNull
 	@Valid
 	protected Company			company;
+
+	@ManyToOne(optional = false)
+	@NotNull
+	@Valid
+	protected Course			course;
 
 }

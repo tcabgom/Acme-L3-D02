@@ -28,15 +28,15 @@ public class Banner extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@PastOrPresent
 	@NotNull
 	protected Date				instantiation;
 
+	// TODO: Restriction: Must be after the instantiation
 	@Temporal(TemporalType.TIMESTAMP)
-	@PastOrPresent
 	@NotNull
 	protected Date				displayPeriodInitial;
 
+	// TODO: Restriction: Must last at least 1 week 
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
 	@NotNull

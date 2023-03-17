@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
@@ -15,6 +16,7 @@ import javax.validation.constraints.PastOrPresent;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.enumerates.Mark;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -41,6 +43,7 @@ public class AuditingRecords extends AbstractEntity {
 	@PastOrPresent
 	protected Date				auditingPeriodInitial;
 
+	// TODO: Restriction: Must be at least 1 hour long
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
 	protected Date				auditingPeriodEnd;
@@ -52,7 +55,8 @@ public class AuditingRecords extends AbstractEntity {
 	@Column(nullable = true)
 	protected String			furtherInformation;
 
-	@ManyToOne
+	@ManyToOne(optional = false)
+	@Valid
 	@NotNull
 	protected Audit				audit;
 }

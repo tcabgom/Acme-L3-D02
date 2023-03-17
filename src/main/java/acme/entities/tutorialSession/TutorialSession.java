@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.enumerates.TeachingType;
+import acme.entities.enumerates.ActivityType;
 import acme.entities.tutorial.Tutorial;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
@@ -27,41 +27,41 @@ public class TutorialSession extends AbstractEntity {
 
 	// Serialisation identifier ------------------------------------------------------
 
-	protected static final long		serialVersionUID	= 1L;
+	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes --------------------------------------------------------------------
 
 	@NotBlank
 	@Length(max = 75)
-	protected String				title;
+	protected String			title;
 
 	@NotBlank
 	@Length(max = 100)
-	protected String				sessionAbstract;
+	protected String			sessionAbstract;
 
 	@NotNull
-	protected TeachingType	sessionType;
+	protected ActivityType		sessionType;
 
 	// TODO: Restriction: At least one day after the instantiation date
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date					sessionStart;
+	protected Date				sessionStart;
 
 	// TODO: Restriction: Not more than five hours after starting
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date					sessionEnd;
+	protected Date				sessionEnd;
 
 	@URL
-	protected String				moreInfo;
+	protected String			moreInfo;
 
 	// Derived attributes ------------------------------------------------------------
 
 	// Relationships -----------------------------------------------------------------
 
 	@NotNull
-	@ManyToOne
+	@ManyToOne(optional = false)
 	@Valid
-	protected Tutorial				tutorial;
+	protected Tutorial			tutorial;
 
 }

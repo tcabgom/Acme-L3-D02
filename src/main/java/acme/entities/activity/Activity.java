@@ -25,10 +25,12 @@ public class Activity extends AbstractEntity {
 
     // Attributes -------------------------------------------------------------
 
+    @NotNull
     @NotBlank
     @Length(max = 75)
     protected String title;
 
+    @NotNull
     @NotBlank
     @Length(max = 100)
     protected String enrolmentAbstract;
@@ -36,9 +38,11 @@ public class Activity extends AbstractEntity {
     @NotNull
     protected ActivityType type;
 
+    @NotNull
     @Temporal(TemporalType.TIMESTAMP)
     protected Date periodStart;
 
+    @NotNull
     @Temporal(TemporalType.TIMESTAMP)
     protected Date periodEnd;
 

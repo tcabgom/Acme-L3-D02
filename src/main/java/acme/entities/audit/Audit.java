@@ -4,12 +4,14 @@ package acme.entities.audit;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
+import acme.entities.lecture.Course;
 import acme.framework.data.AbstractEntity;
 import acme.roles.Auditor;
 import lombok.Getter;
@@ -25,7 +27,7 @@ public class Audit extends AbstractEntity {
 	 */
 	private static final long	serialVersionUID	= 1L;
 
-	@Pattern(regexp = "^[A-Z]{1,3}[0-9][0-9]{3}$")
+	@Pattern(regexp = "^[A-Z]{1,3}[0-9]{3}$")
 	@NotBlank
 	@Column(unique = true)
 	protected String			code;
@@ -42,15 +44,18 @@ public class Audit extends AbstractEntity {
 	@NotBlank
 	protected String			weakPoints;
 
-	@NotNull
-	protected Mark				mark;
+	//	TODO: Derived atribute, after discussion with client must be a string with a list of marks of the records
+	//	@NotNull
+	//	protected Mark				mark;
 
-	@ManyToOne
+	@ManyToOne(optional = false)
+	@Valid
 	@NotNull
 	protected Auditor			auditor;
 
-	//	@ManyToOne
-	//	@NotNull
-	//	protected Course			Course;
+	@ManyToOne(optional = false)
+	@Valid
+	@NotNull
+	protected Course			Course;
 
 }

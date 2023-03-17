@@ -17,8 +17,8 @@ public class AdminDashboard extends AbstractForm {
     // Attributes -------------------------------------------------------------
     protected Map<AbstractRole, Integer> totalPrincipals;
 
-    protected double linkAndEmailPeepRatio;
-    protected double criticalBulletinRatio;
+    protected Double linkAndEmailPeepRatio;
+    protected Double criticalBulletinRatio;
 
     protected Map<String,Statistics> budgetStatisticsByCurrency;
 

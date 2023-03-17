@@ -1,7 +1,7 @@
 
-package acme.entities.practicum_session;
+package acme.entities.practicumSession;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -9,6 +9,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -21,7 +22,7 @@ import lombok.Setter;
 @Entity
 @Setter
 @Getter
-public class Practicum_session extends AbstractEntity {
+public class PracticumSession extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -37,11 +38,13 @@ public class Practicum_session extends AbstractEntity {
 	@Length(max = 100)
 	protected String			abstractSession;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	protected LocalDate			startWeek;
+	protected Date				startWeek;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	protected LocalDate			finishWeek;
+	protected Date				finishWeek;
 
 	@URL
 	protected String			link;
@@ -50,6 +53,7 @@ public class Practicum_session extends AbstractEntity {
 
 	// Relationships ----------------------------------------------------------
 
+	@NotNull
 	@ManyToOne(optional = true)
 	@Valid
 	protected Practicum			practicum;

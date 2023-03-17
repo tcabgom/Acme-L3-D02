@@ -42,15 +42,16 @@ public class Course extends AbstractEntity {
 	protected String			courseAsbtract;
 
 	@NotNull
-	@Valid
 	protected Money				retailPrice;
 
 	@URL
 	protected String			furtherInformation;
 
+	protected boolean			draftMode;
+
 	// Derived attributes -----------------------------------------------------
 
-	// protected TeachingType		knowledge;
+	// TODO: Atributo derivado tipo de actividad
 
 	// Relationships ----------------------------------------------------------
 

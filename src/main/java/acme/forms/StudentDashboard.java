@@ -1,8 +1,11 @@
 package acme.forms;
 
+import acme.entities.enumerates.ActivityType;
 import acme.framework.data.AbstractForm;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Map;
 
 @Getter
 @Setter
@@ -13,8 +16,7 @@ public class StudentDashboard extends AbstractForm {
 
     // Attributes -------------------------------------------------------------
 
-    protected int totalTheoryActivities;
-    protected int totalHandsOnActivities;
+    protected Map<ActivityType, Integer> totalActivitiesByType;
 
     protected Statistics activityPeriodStatistics;
 

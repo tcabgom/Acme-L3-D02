@@ -3,7 +3,7 @@ package acme.forms;
 
 import java.util.Map;
 
-import acme.entities.enumerates.TeachingType;
+import acme.entities.enumerates.ActivityType;
 import acme.framework.data.AbstractForm;
 
 public class LecturerDashboarb extends AbstractForm {
@@ -14,7 +14,7 @@ public class LecturerDashboarb extends AbstractForm {
 
 	// Attributes -------------------------------------------------------------
 
-	protected Map<TeachingType, Integer>	totalNumberOfSessionsPerType;
+	protected Map<ActivityType, Integer>	totalNumberOfSessionsPerType;
 
 	protected Statistics					lecturerLectures;
 
